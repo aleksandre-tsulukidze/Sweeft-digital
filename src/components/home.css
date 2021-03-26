@@ -1,0 +1,44 @@
+.selectTest {
+    padding: 0.3rem 3rem;
+    margin: 0.5rem 3rem;
+
+    box-shadow: 2px 3px 5px black;
+    background-color: #bbb;
+    text-align: left;
+}
+
+label {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.3rem 0 0.3rem 0.3rem;
+    display: block;
+    background-color: #ccc;
+    box-shadow: 2px 2px 4px rgb(105, 105, 105);
+}
+
+select {
+    margin: 1rem 0 2rem 0;
+    height: 2.5rem;
+    width: 10rem;
+
+    color: black;
+    background-color:rgb(221, 221, 221);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+}
+
+button {
+    margin: 0 auto 1rem auto;
+    display: block;
+    padding: 0.5rem 0;
+
+    border: none;
+    width: 8rem;
+    height: auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
