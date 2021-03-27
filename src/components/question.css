@@ -1,13 +1,39 @@
 .question {
     padding: 0.3rem 3rem;
-    margin: 0.5rem 3rem;
+    position: relative;
 
-    box-shadow: 2px 3px 5px black;
-    background-color: #bbb;
     text-align: left;
 }
 
 h1 {
     display: block;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+ul {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+li {
     font-size: 1.4rem;
+    list-style: none;
+    height: 10rem;
+
+    padding: 1rem 2rem;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+.points {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+    top: 5%;
+    right: 5%;
 }

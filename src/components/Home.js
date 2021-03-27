@@ -10,14 +10,15 @@ const Home = () => {
     const [difficulty, setDifficulty] = useState('&difficulty=');
     const [response, setResponse] = useState([]);
     const [counter, setCounter] = useState(0);
+    const [answerIndex, setAnswerIndex] = useState(null);
+    const [haventClicked, setHaventClicked]= useState(true);
 
     const onSubmitHandler = () => {
         axios.get("https://opentdb.com/api.php?amount=10"+category+difficulty)
         .then(response => {
             setResponse(response.data.results);
-            console.log(response.data.results)
         }).catch(err => {
-            console.log(err)
+            console.log(err);
         });
     };
 
@@ -45,13 +46,30 @@ const Home = () => {
 
     if (response.length !== 0 && counter < 10) {
         page = (
-            <div>
+            <div className='testQuestions'>
                 <Question 
                     question={response[counter].question}
                     correct={response[counter].correct_answer}
                     incorrect={response[counter].incorrect_answers}
+                    answerIndex={answerIndex}
+                    setAnswerIndex={setAnswerIndex}
+                    setHaventClicked={setHaventClicked}
+                    haventClicked={haventClicked}
                 />
-                <button onClick={() => {setCounter(counter+1)}}>Next</button>
+                <button onClick={() => {
+                    setCounter(counter+1);
+                    setAnswerIndex(null);
+                    setHaventClicked(true)
+                    }}>Next</button>
+            </div>
+        );
+    } else if (counter === 10) {
+        page = (
+            <div>
+                <button onClick={() => {setResponse([]); 
+                        setCounter(0); 
+                        setCategory('&category=');
+                        setDifficulty('&difficulty=')}}>Start again</button>
             </div>
         )
     };
