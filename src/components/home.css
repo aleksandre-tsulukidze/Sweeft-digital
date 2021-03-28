@@ -1,39 +1,49 @@
 .selectTest {
     padding: 0.3rem 3rem 1rem 3rem;
     margin: 0.5rem 3rem;
-
-    box-shadow: 2px 3px 5px black;
-    background-color: #bbb;
     text-align: left;
+
+    box-shadow: 5px 5px 5px black;
+    background-color: #202020;
+    color: white;
 }
 
 .testQuestions {
     padding: 0 0 1rem 0;
     margin: 0.5rem 3rem;
 
-    box-shadow: 2px 3px 5px black;
-    background-color: #bbb;
+    box-shadow: 5px 5px 5px #050505;
+    background-color: #202020;
+}
+
+.finalScore {
+    margin: 2rem auto;
+}
+
+.quizStart {
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 2rem;
 }
 
 label {
-    font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
     padding: 0.3rem 0 0.3rem 0.3rem;
     display: block;
-    background-color: #ccc;
-    box-shadow: 2px 2px 4px rgb(105, 105, 105);
+    background-color: #1C1C1C;
+    box-shadow: 2px 2px 4px #050505;
 }
 
 select {
     margin: 1rem 0 2rem 0;
     height: 2.5rem;
-    width: 10rem;
+    width: 14rem;
 
-    color: black;
-    background-color:rgb(221, 221, 221);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
+    color: white;
+    background-color: #1C1C1C;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
     text-decoration: none;
     border: none;
 }
@@ -49,4 +59,8 @@ button {
     font-size: 1.2rem;
     font-weight: 500;
     cursor: pointer;
+
+    background-color: #1C1C1C;
+    box-shadow: 2px 2px 4px #050505;
+    color: white;
 }

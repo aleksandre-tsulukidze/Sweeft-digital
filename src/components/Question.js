@@ -4,13 +4,12 @@ import './question.css';
 import { makeStyles} from '@material-ui/styles';
 
 
-const Question = ({question, correct, incorrect, setAnswerIndex, answerIndex, haventClicked, setHaventClicked}) => {
+const Question = ({question, correct, incorrect, setAnswerIndex, answerIndex, haventClicked, setHaventClicked, points, setPoints}) => {
 
-    const [points, setPoints] = useState(0);
     const [answers, setAnswers] = useState([]);
     const useStyles = makeStyles({
         rightAnswer: {
-          backgroundColor: '#B8F749'
+          backgroundColor: '#008000'
         },
         incorrectAnswer: {
             backgroundColor: '#FB0D0D'
@@ -39,7 +38,6 @@ const Question = ({question, correct, incorrect, setAnswerIndex, answerIndex, ha
     },[correct, incorrect]);
 
     const onClickHandler = (value, index) => {
-
         if (haventClicked){
             setAnswerIndex(index)
         }
@@ -52,7 +50,7 @@ const Question = ({question, correct, incorrect, setAnswerIndex, answerIndex, ha
 
     };
 
-    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const renderHTML = (rawHTML) => React.createElement("p", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const getClassName = (index) => {
         if(index === answerIndex && index === answers.indexOf(correct)) return classes.rightAnswer
         else if (index === answerIndex ) return classes.incorrectAnswer 
@@ -65,10 +63,10 @@ const Question = ({question, correct, incorrect, setAnswerIndex, answerIndex, ha
             <ul>
                 {answers.map((item, index) => {
                     return <li className={getClassName(index)} 
-                            onClick={(e) => onClickHandler(e.target.outerText, index)} key={index} >{renderHTML(item)}</li>
+                            onClick={(e) => onClickHandler(e.target.outerText,index)} key={index}>{renderHTML(item)}</li>
                 })}
             </ul>
-            <div className="points">{points}</div>
+            <div className="points">Your Score: {points}</div>
         </div>
     );
 };

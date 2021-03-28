@@ -10,6 +10,7 @@ const Home = () => {
     const [difficulty, setDifficulty] = useState('&difficulty=');
     const [response, setResponse] = useState([]);
     const [counter, setCounter] = useState(0);
+    const [points, setPoints] = useState(0);
     const [answerIndex, setAnswerIndex] = useState(null);
     const [haventClicked, setHaventClicked]= useState(true);
 
@@ -24,7 +25,7 @@ const Home = () => {
 
     let page = (
         <div className="selectTest">
-            <h1> Choose your quiz </h1>
+            <h1 className="quizStart">Choose your quiz </h1>
                 <label htmlFor="Category">Choose Category</label>
                 <select onChange={(e) => setCategory(category + e.target.value)} name="category" className="Category">
                     <option>Any</option>
@@ -55,6 +56,8 @@ const Home = () => {
                     setAnswerIndex={setAnswerIndex}
                     setHaventClicked={setHaventClicked}
                     haventClicked={haventClicked}
+                    points={points}
+                    setPoints={setPoints}
                 />
                 <button onClick={() => {
                     setCounter(counter+1);
@@ -66,8 +69,10 @@ const Home = () => {
     } else if (counter === 10) {
         page = (
             <div>
+                <h1 className="finalScore">You have scored {points} points</h1>
                 <button onClick={() => {setResponse([]); 
                         setCounter(0); 
+                        setPoints(0);
                         setCategory('&category=');
                         setDifficulty('&difficulty=')}}>Start again</button>
             </div>

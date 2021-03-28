@@ -6,24 +6,35 @@
 }
 
 h1 {
+    max-width: 80%;
     display: block;
     font-size: 1.6rem;
     margin-bottom: 2rem;
+    color: white;
 }
 
 ul {
     display: grid;
+    padding: 0;
     gap: 0.5rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    background-color: #202020;
 }
 
 li {
-    font-size: 1.4rem;
+    padding-left: 1rem;
+    font-size: 1.8rem;
     list-style: none;
-    height: 10rem;
+    height: 8rem;
+    background-color: #050505;
+    color: white;
 
-    padding: 1rem 2rem;
+    border-radius: 1%;
+}
+
+li p {
+    transform: translate(0%, 50%);
 }
 
 li:hover {
@@ -31,9 +42,10 @@ li:hover {
 }
 
 .points {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     font-weight: 500;
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 2.5%;
+    color: #3137C9;
 }
